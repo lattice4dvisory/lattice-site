@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japan's Banks and Post-Quantum Cryptography: What Vendors Need to Know — Lattice Advisory</title>
+<meta name="description" content="A two-minute brief on Japan's FSA study group report and the G7 Cyber Expert Group PQC roadmap, and what they mean for vendors selling into Japanese banks.">
+<meta property="og:title" content="Japan's Banks and Post-Quantum Cryptography: What Vendors Need to Know">
+<meta property="og:description" content="Japan FSA + G7 CEG roadmap: the timelines, what banks are told to ask vendors, and why Japan is different.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.lattice-advisory.com/japan-pqc-brief/">
+<link rel="canonical" href="https://www.lattice-advisory.com/japan-pqc-brief/">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">LATTICE ADVISORY</a>
+    <nav>
+      <a href="/assets/japan-pqc-brief.pdf">PDF</a>
+      <a href="mailto:haito@lattice-advisory.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article class="wrap">
+  <h1>Japan's Banks and Post-Quantum Cryptography: What Vendors Need to Know</h1>
+  <p class="lede">A two-minute brief on Japan's FSA study group report and the G7 Cyber Expert Group roadmap.</p>
+  <p class="byline">Haito Sekino, Lattice Advisory · October 2026</p>
+
+  <div class="box">
+    <strong>Bottom line</strong>
+    <ul style="margin-top:10px">
+      <li>Japanese banks now have two reference timelines: high-priority systems PQC-capable by the <strong>early-to-mid 2030s</strong> (Japan FSA), and the most critical systems around <strong>2030–2032</strong> with sector-wide migration by <strong>2035</strong> (G7 CEG).</li>
+      <li>Neither document is binding — but the FSA report explicitly expects banks to <strong>question their vendors on PQC readiness, and to consider switching vendors</strong> whose plans fall short.</li>
+      <li>Japan's banking IT is heavily outsourced, multi-vendor, and built on shared industry systems. Vendors who can answer Japanese banks' PQC questions in Japanese, in the format banks are told to use, will have a structural advantage.</li>
+    </ul>
+  </div>
+
+  <h2>The two documents</h2>
+  <p><strong>Japan FSA — Study Group on PQC for Deposit-Taking Institutions, Report (Nov 26, 2024; 59 pp.)</strong><br>
+  Written for bank executives. Members included the three megabanks, regional banks, and the shared-system operators for shinkin and credit cooperatives; observers included Financial ISAC Japan, CRYPTREC, FISC, the Bank of Japan, and NISC. It is a policy dialogue output, not a statutory guideline (p.3).</p>
+  <p><strong>G7 Cyber Expert Group — Statement on a Coordinated Roadmap for PQC Transition in the Financial Sector (Jan 12, 2026)</strong><br>
+  Published with an official Japanese provisional translation by the FSA. Explicitly not a regulatory expectation; it sets a six-phase framework and reference dates for the sector.</p>
+
+  <h2>The timeline Japanese banks are working to</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Source</th><th>Scope</th><th>Target</th></tr></thead>
+    <tbody>
+      <tr><td>Japan FSA</td><td>High-priority systems PQC-capable</td><td>Early-to-mid 2030s (p.2, p.48)</td></tr>
+      <tr><td>G7 CEG</td><td>Most critical systems</td><td>~2030–2032</td></tr>
+      <tr><td>G7 CEG</td><td>Sector-wide transition</td><td>2035</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>The FSA also notes that PQC requirements may be incorporated into domestic and foreign regulation (p.2), and asks banks to prepare fallback measures if high-priority systems miss their deadline (p.48).</p>
+
+  <h2>What the FSA tells banks to ask you</h2>
+  <p>The report's section on IT vendors (pp.49–50) recommends that banks:</p>
+  <ul>
+    <li>confirm whether each vendor has a PQC migration plan and <strong>when PQC will be built into its products</strong>;</li>
+    <li><strong>consider switching to another vendor</strong> depending on that answer;</li>
+    <li>use FS-ISAC's vendor questionnaire, which probes leadership engagement, the vendor's own crypto inventory, and its prioritization policy.</li>
+  </ul>
+  <p>Japanese banks are, in effect, being instructed to run PQC due diligence on their suppliers.</p>
+
+  <h2>Why Japan is different</h2>
+  <ul>
+    <li><strong>Outsourcing dependence.</strong> Japanese banks rely heavily on external contractors, often several per system, and vendor readiness varies (p.54).</li>
+    <li><strong>Shared industry systems.</strong> Zengin, BOJ-NET, integrated ATM switching, ANSER, Densai, CAFIS and SWIFT are shared across institutions, so consensus on changes is slow (pp.37–38).</li>
+    <li><strong>Priority criteria tied to FISC.</strong> High-priority systems are defined with reference to FISC's security guidelines ("specified systems"), internet exposure, and links to external systems (p.43).</li>
+    <li><strong>Inventory format.</strong> Banks are pointed to a specific set of inventory fields (p.45) and to CycloneDX (CBOM) as a viable format (p.56).</li>
+    <li><strong>Hybrid only via standards.</strong> Hybrid key exchange is endorsed as a transitional measure, but only through standardized schemes such as RFC 9370 and the IETF TLS hybrid design (pp.47–48).</li>
+    <li><strong>Talent gap.</strong> Banks are told their cyber teams may lack cryptography specialists and to secure external partners (p.55). The G7 roadmap adds that collaboration with third parties matters most for smaller institutions with high vendor dependence.</li>
+  </ul>
+
+  <h2>What this means for vendors selling into Japan</h2>
+  <ol>
+    <li><strong>Have a Japanese-language answer to "what is your PQC roadmap?"</strong> — mapped to the FS-ISAC questions banks will use.</li>
+    <li><strong>Map your product to the FSA inventory fields</strong> (usage context, purpose, implementation point, algorithm, key length, key management, long-term data exposure).</li>
+    <li><strong>Show CBOM/CycloneDX output</strong> if your product discovers or manages cryptography.</li>
+    <li><strong>Document hybrid support by standard</strong>, not by proprietary design.</li>
+    <li><strong>Prioritize multipliers</strong>: shared-center operators and system integrators that serve many regional banks, where one decision reaches dozens of institutions.</li>
+  </ol>
+
+  <h2>How Lattice Advisory can help</h2>
+  <p>Lattice Advisory produces a <strong>Japan FI Readiness Brief</strong> for PQC and cryptography vendors: a fixed-scope, fixed-fee package that maps your product to the FSA report and G7 roadmap, drafts Japanese-language answers to the vendor questions banks are told to ask, and identifies where your product fits Japan's shared-system structure. Delivered in seven days, fully asynchronous.</p>
+  <p class="no-print"><a class="btn" href="mailto:haito@lattice-advisory.com?subject=Japan%20FI%20Readiness%20Brief">Contact Lattice Advisory</a>
+  <a class="btn" href="/assets/japan-pqc-brief.pdf">Download PDF</a></p>
+  <p>Contact: <a href="mailto:haito@lattice-advisory.com">haito@lattice-advisory.com</a></p>
+
+  <h2>Sources</h2>
+  <ul class="small">
+    <li><a href="https://www.fsa.go.jp/singi/pqc/houkokusyo.pdf">Japan FSA, Report of the Study Group on PQC for Deposit-Taking Institutions (Nov 2024)</a></li>
+    <li><a href="https://home.treasury.gov/system/files/136/G7-CEG-Quantum-Roadmap.pdf">G7 Cyber Expert Group, Statement on Advancing a Coordinated Roadmap for the Transition to PQC in the Financial Sector (Jan 2026)</a></li>
+    <li><a href="https://www.fsa.go.jp/inter/etc/20260115/pqc.html">Japan FSA, publication page and provisional translation of the G7 statement</a></li>
+  </ul>
+  <p class="small">Page references are to the FSA report. This brief summarizes public documents and is not legal or regulatory advice.</p>
+</article>
+</main>
+
+<footer class="site">
+  <div class="wrap">Lattice Advisory · Yokohama, Japan · <a href="/">Home</a></div>
+</footer>
+</body>
+</html>
